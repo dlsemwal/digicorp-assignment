@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row"></div>
+  <h2 class="text-center page-header pt-4 pb-2">Leave Form</h2>
+  <form class="form-group p-4" name="ContactForm" #userForm="ngForm" (ngSubmit)="submitForm(userForm, id, contact)">
+    <div class="row">
+      <div class="mb-2 col-md-2"> </div>
+
+      <div class="mb-2 col-md-8">
+
+
+        <div class="row mar-bo-10">
+        To:  <input type="date" class="form-control mb-2  col-md-12" id="formDate" name="formDate" #formDate="ngModel"
+            [(ngModel)]="contact.formDate" placeholder="From Date">
+        </div>
+
+        <div class="row mar-bo-10">
+         From: <input type="date" class="form-control mb-2  col-md-12" id="toDate" name="toDate" #toDate="ngModel"
+            [(ngModel)]="contact.toDate" placeholder="To Date">
+        </div>
+
+        <!-- <div class="row mar-bo-10">
+          <input type="email" class="form-control mb-2 col-md-12" id="email" name="email" #email="ngModel"
+            [(ngModel)]="contact.email" placeholder="Enter Email Id">
+        </div> -->
+
+        <div class="row mar-bo-10">
+          <label>Select leave type</label>
+          <select id="leavesType" name="leavesType"
+          #leavesType="ngModel" [(ngModel)]="contact.leavesType" placeholder="Select Leave" class="custom-select mb-3">
+          <option value="EL" selected>select leave</option>  
+          <option value="EL">Casual Leave</option>
+            <option value="PL">Earned Leave</option>
+            <option value="ML">Others Leave</option>
+          </select>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <button type="submit" class="btn btn-primary m-auto col-md-2 mb-2">Submit</button>
+    </div>
+  </form>
+</div>

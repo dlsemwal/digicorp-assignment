@@ -1,0 +1,25 @@
+
+.sign-layout {
+    background: skyblue;
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  
+  .inner-body {
+    background: #FFF;
+  }
+  
+  
+  input {
+    border: 0px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid lightgrey;
+  }
+  input[placeholder] {
+    color: black; 
+  }
+  
+  .mar-bo-10 {
+    margin-bottom: 30px;
+  }

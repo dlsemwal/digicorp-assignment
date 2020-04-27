@@ -1,0 +1,6 @@
+{
+  "name": "digicorp-backend-app",
+  "jwtPrivateKey": "private_key",
+  "db": "mongodb://localhost/digi",
+  "PORT": 3000
+}

@@ -1,0 +1,45 @@
+<div class="sign-layout">
+  <div class="inner-body">
+
+    <div class="container">
+      <div class="row"></div>
+      <h2 class="text-center page-header pt-4 pb-2">Sign In</h2>
+      <form class="form-group p-4" name="Sign Form"  [formGroup]= "loginForm" (ngSubmit)="loginSubmit()">
+
+        <div class="row mar-bo-10">
+          <input type="email" class="form-control m-auto mb-2 col-md-8" id="email" name="email" formControlName="email" placeholder="Enter Email Id">
+          <p *ngIf="loginsubmitted && g.email.errors" class="text-danger">
+          
+               email is required
+    
+</p>
+        </div>
+
+        <div class="row mar-bo-10">
+          <input type="passsword" class="form-control m-auto mb-2 col-md-8" id="passsword" name="passsword"
+          formControlName="password" placeholder="Enter passsword">
+          <p *ngIf="loginsubmitted && g.password.errors" class="text-danger">
+          
+                password is required
+       
+</p>
+        </div>
+
+        <div class="row">
+          <button type="submit" class="btn btn-primary m-auto col-md-2 mb-2">Submit</button>
+        </div>
+  <!-- <a  [routerLink]="['registration']" class="link">registration here>></a> -->
+    
+      </form>
+
+      <div class="" *ngIf="errorShowLogin">
+        <h5  class="alert alert-danger" role="alert">
+          {{errorMsg}}
+        </h5>
+       
+    </div>
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,49 @@
+<div class="py-3">
+	<div class="row">
+		<div class="col-md-6 mb-3">
+			<h3 class="text-left ml-3" style="text-decoration: underline;">Leaves</h3>
+		</div>
+		<div class="col-md-6  mb-3">
+			<!-- <form class="form-inline">
+				<input class="form-control" name="serachInput" style="width: 400px;" [(ngModel)]="filterText"
+					type="search" placeholder="Search by Name, Email and Number" aria-label="Search">
+			</form> -->
+		</div>
+	</div>
+	<div class="table-responsive">
+		<table class="table table-bordered table-sm table-hover mt-3">
+			<thead class="bg-warning">
+				<tr>
+					<th>Image</th>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Phone</th>
+					<th>Manage</th>
+				</tr>
+			</thead>
+			<tbody *ngIf="contacts">
+				<tr *ngFor="let contact of contacts, let id = index">
+					<input type="hidden" name="indax" value="id">
+					<td style="display:none;">{{ id+1 }}</td>
+					<td class="img-resized"><img class=" rounded-circle img-responsive"
+							style="width: 50px; height:30px;" [src]="image"></td>
+					<td>{{ contact.first_name }} {{ contact.last_name }}</td>
+					<td>{{ contact.email }}</td>
+					<td>{{ contact.home_phone }}</td>
+					<td>
+						<a class="icons" [routerLink]="['../add-contact', id]"><i class="fa fa-pencil-square-o"
+								aria-hidden="true"></i></a>
+						<a class="icons" [routerLink]="['../display-contact', id]"><i class="fa fa-eye"
+								aria-hidden="true"></i></a>
+						<a class="icons" (click)="deleteRocord(contact.id, id)"><i class="fa fa-trash"
+								aria-hidden="true"></i></a>
+					</td>
+				</tr>
+				<tr *ngIf="contacts.length == 0">
+					<td colspan="5">No Data To Display...</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</div>

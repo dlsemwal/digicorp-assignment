@@ -1,0 +1,56 @@
+<div class="sign-layout">
+    <div class="inner-body">
+
+        <div class="container">
+            <div class="row"></div>
+            <h2 class="text-center page-header pt-4 pb-2">Sign up</h2>
+            <form class="form-group p-4" name="Sign Form" [formGroup]= "signupForm" (ngSubmit)="signup()">
+
+                <div class="row mar-bo-10">
+                    <input type="text" class="form-control m-auto mb-2 col-md-8" id="name" name="name" 
+                    formControlName="name" placeholder="Enter User Name">
+                                <br>
+                            <p *ngIf="submitted && g.name.errors" class="text-danger">
+                                    First Name is required
+                                </p>
+                    
+                   
+                </div>
+
+                <div class="row mar-bo-10">
+                    <input type="email" class="form-control m-auto mb-2 col-md-8" id="email" name="email"
+                    formControlName="email"  placeholder="Enter Email Id">
+                    <p *ngIf="submitted && g.email.errors" class="text-danger">
+                        email is required
+                    </p>
+                </div>
+
+                <div class="row mar-bo-10">
+                    <input type="password" class="form-control m-auto mb-2 col-md-8" id="password" name="password"
+                    formControlName="password"  placeholder="Enter password">
+                    <p *ngIf="submitted && g.password.errors" class="text-danger">
+                        password is required
+                    </p>
+                </div>
+
+                <div class="row">
+                    <button type="submit" class="btn btn-primary m-auto col-md-2 mb-2">Submit</button>
+                </div>
+            </form>
+            <div class="col-xs-12 col-md-12" *ngIf="signupDoneMsg">
+                <p class="alert alert-success">
+                  Congratulation you have successfully  Registered !!!
+                  <br>
+                  <a  [routerLink]="['login']" class="link">Login here >></a>
+              
+                </p>
+              </div>
+              <div class="p-3 mb-2 bg-danger text-white m-3" *ngIf="errorShow">
+                 {{errorMsg}}</div>
+          
+
+        </div>
+        
+    </div>
+
+</div>
